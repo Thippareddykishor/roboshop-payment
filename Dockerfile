@@ -2,5 +2,5 @@ FROM    docker.io/python
 RUN     useradd -u 1001 python
 WORKDIR /home/python
 COPY    payment.ini payment.py rabbitmq.py requirements.txt /app/
-RUN     pip3 install -r requirements.txt
+RUN     pip3.12 install -r requirements.txt
 ENTRYPOINT [ "uwsgi", "--ini" , "payment.ini" ] 
